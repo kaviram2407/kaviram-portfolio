@@ -159,12 +159,12 @@
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
-                    <form method="post" action="https://script.google.com/macros/s/AKfycbwHexRPyZ1oBc5amxyowltD8LTBZQFnmHoTwyitnoEtlCNlq4kz2Pjp21vIx4sw9Vg3IA/exec" name="contact-form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="text" placeholder="Phone" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="message" rows="10" class="contact__input"></textarea>
-                        <input type="submit" value="SEND" class="contact__button button" id="submit" >
+                    <form  name="contact-form" id="contact-form" onsubmit="submitForm(event)">
+                        <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                        <input type="text" name="phone" placeholder="Phone" class="contact__input" required>
+                        <input type="mail" name="email" placeholder="Email" class="contact__input" required>
+                        <textarea name="message" rows="10" class="contact__input" required> </textarea>
+                        <input type="submit" value="SEND" class="contact__button button" >
                     </form>
                 </div>
             </section>

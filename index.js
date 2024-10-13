@@ -52,25 +52,23 @@ const sr = ScrollReveal({
 });
 
 /*===== CONTACT FORM ======*/
-
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwHexRPyZ1oBc5amxyowltD8LTBZQFnmHoTwyitnoEtlCNlq4kz2Pjp21vIx4sw9Vg3IA/exec';
-const form = document.forms['contact-form'];
-
-form.addEventListener('submit', e => {
-  e.preventDefault(); // Prevent the default form submission
-
-  // Send form data using fetch
+function submitForm(event) {
+  event.preventDefault();  // Prevent form from submitting the traditional way
+  
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwHexRPyZ1oBc5amxyowltD8LTBZQFnmHoTwyitnoEtlCNlq4kz2Pjp21vIx4sw9Vg3IA/exec'; // Replace with your Google Script URL
+  const form = document.forms['contact-form'];
+  
+  // Fetch API to submit the form data to Google Apps Script
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-    .then(response => {
-      if (response.ok) {
-        alert("Thank you! Your form is submitted successfully.");
-        form.reset(); // Reset the form after successful submission
-      } else {
-        alert("Oops! Something went wrong. Please try again.");
-      }
-    })
-    .catch(error => console.error('Error!', error.message));
-});
+      .then(response => {
+          alert("Thank you! Your form has been submitted successfully.");  // Show popup message
+          form.reset();  // Clear the form after successful submission
+      })
+      .catch(error => {
+          alert('Submission failed: ' + error.message);  // Error message
+          console.error('Error!', error.message);
+      });
+}
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
