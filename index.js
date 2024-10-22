@@ -69,6 +69,24 @@ function submitForm(event) {
           console.error('Error!', error.message);
       });
 }
+
+/*====== project ======*/
+ 
+function showPopup(popupId) {
+    // Show the popup
+    document.getElementById(popupId).style.display = "block";
+    document.body.style.overflow = 'hidden';
+    
+    // Get the paragraph element for typing text
+    
+}
+
+function closePopup(popupId) {
+    // Hide the popup
+    document.getElementById(popupId).style.display = "none";
+    document.body.style.overflow = 'auto';
+}
+
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
