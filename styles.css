@@ -362,6 +362,10 @@ img {
 .close:hover, .close:focus {
   color: black;
 }
+.click{
+  color: skyblue;
+  text-align: center;
+}
 
 /* Typing animation */
 @keyframes typing {
