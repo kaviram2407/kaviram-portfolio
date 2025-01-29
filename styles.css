@@ -420,12 +420,13 @@ p.typing-text {
 }
 .footer__social {
   margin-bottom: var(--mb-4);
-  align-self: center;
+  align-self:auto;
 }
 .footer__icon {
   font-size: 1.5rem;
   color: #fff;
   margin: 0 var(--mb-2);
+  align-items:end;
 }
 .footer__copy {
   font-size: var(--smaller-font-size);
